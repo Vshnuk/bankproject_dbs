@@ -1,0 +1,201 @@
+<br><br><br><br><br>
+<div>Welcome {{adminusername}}</div> 
+<div class="container-fluid" style="border:1px solid #2c4857;border-top: none;">
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="accounts-tab" data-toggle="tab" href="#accounts" role="tab" aria-controls="accounts" aria-selected="true">Accounts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+    </li>
+
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
+    <div class="container sub-tabs">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-viewAccount-tab" data-toggle="pill" href="#pills-viewAccount" role="tab" aria-controls="pills-viewAccount" aria-selected="true" (click)="onlogin()">View Accounts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-modifyAccount-tab" data-toggle="pill" href="#pills-modifyAccount" role="tab" aria-controls="pills-modifyAccount" aria-selected="false">Modify Accounts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-deleteAccount-tab" data-toggle="pill" href="#pills-deleteAccount" role="tab" aria-controls="pills-deleteAccount" aria-selected="false">Delete Accounts</a>
+      </li>
+
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade" id="pills-createAccount" role="tabpanel" aria-labelledby="pills-createAccount-tab">
+      </div>
+
+      <div class="tab-pane fade" id="pills-modifyAccount" role="tabpanel" aria-labelledby="pills-modifyAccount-tab">
+      <form style="max-width: 700px;margin:5% 5% 0 0;">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Name*" [(ngModel)]="ModifiesCustomerProfile.accountname" name="ModifiesCustomerProfileaccountname">
+          </div>
+          <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Account Number*" [(ngModel)]="ModifiesCustomerProfile.accno" name="ModifiesCustomerProfileaccno">
+          </div>
+          <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Aadhar Number" [(ngModel)]="ModifiesCustomerProfile.adhaarno" name="ModifiesCustomerProfileadhaarno">
+          </div>
+          <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Account Type" [(ngModel)]="ModifiesCustomerProfile.accounttype" name="ModifiesCustomerProfileaccounttype">
+          </div>
+          <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Address" [(ngModel)]="ModifiesCustomerProfile.Address" name="ModifiesCustomerProfileAddress">
+          </div>
+          
+       
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" (click)="modifyclicked()">Modify</button>
+        </div>
+      </form>
+      </div>
+
+      <div class="tab-pane fade" id="pills-deleteAccount" role="tabpanel" aria-labelledby="pills-deleteAccount-tab">
+        <form style="max-width: 700px;margin:5% 5% 0 0;">
+          <div class="form-group">
+            <label for="sel1">Select account Number:</label>
+              <select class="form-control" id="sel1" (change)="myFunc($event.target.value)">
+                <option *ngFor="let cusprof of customerprofiles" >{{cusprof.accno}} </option> 
+              </select>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Name*" [(ngModel)]="DeletedCustomerProfile.accountname" name="DeletedCustomerProfileAccountname">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Aadhar Number" [(ngModel)]="DeletedCustomerProfile.adhaarno" name="DeletedCustomerProfileAadhaarname" >
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-danger" (click)="DeleteAccount()">Delete Account</button>
+          </div>
+        </form>
+      </div>
+      <div class="tab-pane fade show active" id="pills-viewAccount" role="tabpanel" aria-labelledby="pills-viewAccount-tab">
+      <form class="mx-2 my-auto d-inline w-100">
+         <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="cus.accno" placeholder="Search Account..." name="accno">
+             <span class="input-group-append">
+             <button class="btn btn-secondary" type="button" (click)="searchclicked()" >Search</button>
+             </span>
+          </div>
+      </form>
+      <table class="table" style="font-size: 14px;">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+          <th scope="col">Account Number</th>
+          <th scope="col">Account Holder Name</th>
+          <th scope="col">Aadhar Number</th>
+          <th scope="col">Created On</th>
+          <th scope="col">Created By</th>
+          <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cusprof of customerprofiles;let i = index">
+            <th scope="row">{{i+1}}</th>
+          <td>{{cusprof.accno}}</td>
+          <td>{{cusprof.accountname}}</td>
+            <td>{{cusprof.adhaarno}}</td>
+          <td>{{cusprof.createdon}}</td>
+          <td>Manasa</td>
+          <td>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success" >Success</button>
+          </div>
+          </td>
+          </tr>
+
+        </tbody>
+      </table>
+      </div>
+    </div>		  	
+    </div>
+    </div>
+
+
+
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="pd-20">
+        <div class="header">
+          <img src="./img/profile.png" height="25" width="25">
+          <div class="desc"><b>ABOUT</b></div>
+          <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a> </div>
+        </div>
+        <!--<h3 class="mgbt-xs-15 mgtp-10 font-semibold"><img src="C:\Users\Abridge Solutions\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\All\dbs_training\img\profile.png">ABOUT</h3>-->
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label">First Name:</label>
+              <div class="col-xs-7 controls">Mariah</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label">Last Name:</label>
+              <div class="col-xs-7 controls">Caraiban</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label">User Name:</label>
+              <div class="col-xs-7 controls">Mariah</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label">Email:</label>
+              <div class="col-xs-7 controls">mariah@gmail.com</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label">City:</label>
+              <div class="col-xs-7 controls">Los Angeles</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label">Country:</label>
+              <div class="col-xs-7 controls">United States</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label">Birthday:</label>
+              <div class="col-xs-7 controls">Jan 22, 1984</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label">Account Number:</label>
+              <div class="col-xs-7 controls">628472636423</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+      
+          <div class="col-sm-6">
+            <div class="row mgbt-xs-0">
+              <label class="col-xs-5 control-label">Phone:</label>
+              <div class="col-xs-7 controls">234-5678</div>
+              <!-- col-sm-10 --> 
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  <div style="margin-bottom: 20px;"><a href=""><i class="fas fa-arrow-left"></i> <span>Back</span></a></div>
+</div>
+

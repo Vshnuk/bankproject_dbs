@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Application</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style type="text/css">
+	.login-bg{
+		 border:1px solid #2c4857;
+		 border-top: none;
+		 background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.3)), url('img/login-bg.png');background-size: cover;
+	}
+</style>
+</head>
+
+<body>
+	<div class="container p-3 bg-color login-bg">
+		<nav class="navbar navbar-light" style="margin:-16px; margin-bottom: 15px;background-color: #dedede;">
+		  <a class="navbar-brand" href="#">
+		    <img src="img/dbs.png" width="45" class="d-inline-block align-top" alt="" /><span style="display:inline-block;margin-top: 13px;">&nbspDBS ASIA HUB 2</span>
+		  </a>
+		  <div style="display: inline-block;"><a href="index.html"><i class="fas fa-sign-out-alt"></i> <span>Back</span></a></div> 
+		</nav>
+		
+		<div class="row p-3 h-100">
+			<div class="col-sm-6 my-auto mobile-header">
+				<div>
+					<div class="bot-img">
+						
+						<img class="" src="img/bot1.png" />
+						<div class="bot-text">
+							<marquee>Hello!<br> Enjoy Banking!</marquee>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 my-auto">
+			    <div id="logreg-forms" class="mx-auto" style="">
+			        <form  action="/loginucheck" method="post">
+			            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+			            <input type="text" name="username" id="username" class="form-control" placeholder="Email or Phone" required="" autofocus="">
+			            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="">
+			            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+			            <a href="#" id="forgot_pswd">Forgot password?</a>
+			            <hr>
+			            <!-- <p>Don't have an account!</p>  -->
+			             </form>
+
+		            <form action="/reset/password/" class="form-reset">
+		                <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+		                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+		                <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+					</form>
+			            <br>
+			    </div>
+			</div>
+		</div>
+		<br><br><br>
+	</div>
+	<footer class="container mainfooter" role="contentinfo">
+	  <div class="footer-middle">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-sm-6">
+	        <!--Column1-->
+	        <div class="footer-pad">
+                    <h4>Contact Us</h4>
+                    <p>
+                      DBS Asia Hub 2, Waverock, Hyderabad - 500032. <br>
+                      <strong>Phone:</strong> +91 9999999999<br>
+                      <strong>Email:</strong> info@example.com<br>
+                    </p>
+
+	        </div>
+	      </div>
+
+    	  <div class="col-sm-6 justify-content-center">
+    		<h4>Follow Us</h4>
+            <ul class="social-network social-circle">
+             <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+             <li><a href="#" class="facebook"><i class="fab fa-facebook"></i></a></li>
+             <li><a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a></li>
+            </ul>				
+		  </div>
+	    </div>
+		<div class="row">
+			<div class="col-md-12 copy">
+				<p class="text-center">&copy; Copyrights 2019 - <strong>DBS Asia Hub 2</strong>.  All rights reserved.</p>
+			</div>
+		</div>
+
+
+	  </div>
+	  </div>
+	</footer>
+
+</body>
+</html>

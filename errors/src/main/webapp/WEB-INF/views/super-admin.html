@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Application</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+	<div class="container" style="border:1px solid #2c4857;border-top: none;">
+		<nav class="navbar navbar-light" style="margin:0 -15px; margin-bottom: 15px;background-color: #dedede;">
+		  <a class="navbar-brand" href="#">
+		    <img src="img/logo-tree.png" width="90" class="d-inline-block align-top" alt="" /><span style="display:inline-block;margin-top: 13px;"></span>
+		  </a>
+		  <div style="display: inline-block;"><span><b> Welcome Admin!!</b></span></div>
+		  <div style="display: inline-block;"><a href="index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></div>
+		  
+		</nav>
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active" id="accounts-tab" data-toggle="tab" href="#accounts" role="tab" aria-controls="accounts" aria-selected="true">Accounts</a>
+		  </li>
+		
+		  <li class="nav-item">
+		    <a class="nav-link" id="logs-tab" data-toggle="tab" href="#logs" role="tab" aria-controls="logs" aria-selected="false">Logs</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="models-tab" data-toggle="tab" href="#models" role="tab" aria-controls="models" aria-selected="false">Models</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="documents-tab" data-toggle="tab" href="#documents" role="tab" aria-controls="documents" aria-selected="false">Documents</a>
+		  </li>
+		  
+		</ul>
+		<div class="tab-content" id="myTabContent">
+		  <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+		  <div class="container sub-tabs">
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+			  <li class="nav-item">
+			    <a class="nav-link active" id="pills-uploadDoc-tab" data-toggle="pill" href="#pills-uploadDoc" role="tab" aria-controls="pills-uploadDoc" aria-selected="true">Upload Documents</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" id="pills-viewDoc-tab" data-toggle="pill" href="#pills-viewDoc" role="tab" aria-controls="pills-viewDoc" aria-selected="false">View Documents</a>
+			  </li>
+
+			</ul>
+			<div class="tab-content" id="pills-tabContent">
+			  <div class="tab-pane fade show active" id="pills-uploadDoc" role="tabpanel" aria-labelledby="pills-uploadDoc-tab">
+				<form style="max-width: 700px;margin:5% 5% 0 0;">
+				  <div class="form-group">
+					  <div class="custom-file">
+					    <input type="file" name="file" class="custom-file-input" id="customFile">
+					    <label class="custom-file-label" for="customFile">Choose Files/Folder...</label>
+					  </div>
+				  </div>
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Enter Domain*">
+				  </div>
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Enter Sub Domain*">
+				  </div>
+				  <div class="form-group">
+					  <button type="submit" class="btn btn-primary">Upload</button>
+				  </div>
+				</form>
+
+
+			  </div>
+			  <div class="tab-pane fade" id="pills-viewDoc" role="tabpanel" aria-labelledby="pills-viewDoc-tab">
+				<form class="mx-2 my-auto d-inline w-100">
+				   <div class="input-group">
+				      <input type="text" class="form-control" placeholder="Search Document...">
+				       <span class="input-group-append">
+				       <button class="btn btn-secondary" type="button">Search</button>
+				       </span>
+				    </div>
+				</form>
+				<table class="table" style="font-size: 14px;">
+				  <thead>
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Document Name</th>
+					  <th scope="col">Domain Name</th>
+					  <th scope="col">Last Accessed On</th>
+					  <th scope="col">Action</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td><a href="#">Document.pdf</a></td>
+				      <td>Domain1</td>
+					  <td>2:11 pm Sunday, 7 July 2019</td>
+					  <td>
+						<div class="form-group">
+							<button type="submit" class="btn btn-danger">Remove</button>
+						</div>
+					</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">2</th>
+				      <td><a href="#">Document.pdf</a></td>
+				      <td>Domain1</td>
+					  <td>2:11 pm Sunday, 7 July 2019</td>
+					  <td>
+						<div class="form-group">
+							<button type="submit" class="btn btn-danger">Remove</button>
+						</div>
+						</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">3</th>
+				      <td><a href="#">Document.pdf</a></td>
+				      <td>Domain1</td>
+				      <td>2:11 pm Sunday, 7 July 2019</td>
+					  <td>
+						<div class="form-group">
+							<button type="submit" class="btn btn-danger">Remove</button>
+						</div>
+						</td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+			</div>		  	
+		  </div>
+		  </div>
+		  <div class="tab-pane fade show active" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
+		  	<div class="sub-tabs">
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+			  <li class="nav-item">
+			    <a class="nav-link active" id="pills-addAccount-tab" data-toggle="pill" href="#pills-addAccount" role="tab" aria-controls="pills-addAccount" aria-selected="true">Add Account</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" id="pills-viewAccount-tab" data-toggle="pill" href="#pills-viewAccount" role="tab" aria-controls="pills-viewAccount" aria-selected="false">Manage Accounts</a>
+			  </li>
+			</ul>
+			<div class="tab-content" id="pills-tabContent">
+			  <div class="tab-pane fade show active" id="pills-addAccount" role="tabpanel" aria-labelledby="pills-addAccount-tab">
+				<form style="max-width: 700px;margin:5% 5% 0 0;">
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Company Name*">
+				  </div>
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Domain*">
+				  </div>
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Address*">
+				  </div>
+				  <div class="form-group">
+					<input type="text" class="form-control" placeholder="Company Admin Name*">
+				  </div>
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Email*">
+				  </div>
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Phone Number*">
+				  </div>
+				  <div class="form-group">
+					<div class="custom-file">
+					  <input type="file" name="file" class="custom-file-input" id="customFile">
+					  <label class="custom-file-label" for="customFile">Select Logo...</label>
+					</div>
+				</div>
+				  <div class="form-group">
+					  <button type="submit" class="btn btn-primary">Add Account</button>
+				  </div>
+				</form>
+			  </div>
+			  <div class="tab-pane fade" id="pills-viewAccount" role="tabpanel" aria-labelledby="pills-viewAccount-tab">
+				  <form class="mx-2 my-auto d-inline w-100">
+					 <div class="input-group">
+						<input type="text" class="form-control" placeholder="Search Account...">
+						 <span class="input-group-append">
+						 <button class="btn btn-secondary" type="button">Search</button>
+						 </span>
+					  </div>
+				  </form>
+				  <table class="table" class="table" style="font-size: 14px;">
+					<thead>
+					  <tr>
+						<th scope="col">#</th>
+						<th scope="col">Company Name</th>
+						<th scope="col">Domain</th>
+						<th scope="col">Admin Name</th>
+						<th scope="col">Email</th>
+						<th scope="col">Added On</th>
+						<th scope="col">Action</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<th scope="row">1</th>
+						<td>Product Labs</td>
+						<td>aaaa</td>
+						<td>Keerthi</td>
+						<td>keerthi@gmail.com</td>
+						<td>2:11 pm Sunday, 7 July 2019</td>
+						<td>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary">Edit</button>
+							</div>
+						</td>
+						<td>
+							<div class="form-group">
+								<button type="submit" class="btn btn-danger">Deactivate</button>
+							</div>
+						</td>
+					  </tr>
+					  <tr>
+						<th scope="row">2</th>
+						<td>aaa.Ai</td>
+						<td>A</td>
+						<td>Srija</td>
+						<td>aaa@gmail.com</td>
+						<td>2:11 pm Sunday, 7 July 2019</td>
+						<td>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary">Edit</button>
+							</div>
+						</td>
+						<td>
+							<div class="form-group">
+								<button type="submit" class="btn btn-danger">Deactivate</button>
+							</div>
+						</td>
+					  </tr>
+					  <tr>
+						<th scope="row">3</th>
+						<td>bb labs</td>
+						<td>xxx</td>
+						<td>Navya</td>
+						<td>bb@gmail.com</td>
+						<td>2:11 pm Sunday, 7 July 2019</td>
+						<td>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary">Edit</button>
+							</div>
+						</td>
+						<td>
+							<div class="form-group">
+								<button type="submit" class="btn btn-danger">Deactivate</button>
+							</div>
+						</td>
+					  </tr>
+					</tbody>
+				  </table>
+			  </div>
+			</div>
+			</div>
+		  </div>
+		  <div class="tab-pane fade" id="models" role="tabpanel" aria-labelledby="models-tab">
+				<div class="sub-tabs">
+					  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+						<li class="nav-item">
+						  <a class="nav-link active" id="pills-addModel-tab" data-toggle="pill" href="#pills-addModel" role="tab" aria-controls="pills-addModel" aria-selected="true">Add Models</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" id="pills-viewModel-tab" data-toggle="pill" href="#pills-viewModel" role="tab" aria-controls="pills-viewModel" aria-selected="false">View Models</a>
+						</li>
+					  </ul>
+					  <div class="tab-content" id="pills-tabContent">
+						<div class="tab-pane fade show active" id="pills-buyModel" role="tabpanel" aria-labelledby="pills-buyModel-tab">
+						  <form style="max-width: 700px;margin:5% 5% 0 0;">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Domain Name*">
+							</div>
+							
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary">Add Model</button>
+							</div>
+						  </form>
+						</div>
+						<div class="tab-pane fade" id="pills-viewModel" role="tabpanel" aria-labelledby="pills-viewModel-tab">
+							<form class="mx-2 my-auto d-inline w-100">
+							   <div class="input-group">
+								  <input type="text" class="form-control" placeholder="Search Model...">
+								   <span class="input-group-append">
+								   <button class="btn btn-secondary" type="button">Search</button>
+								   </span>
+								</div>
+							</form>
+							<table class="table" class="table" style="font-size: 14px;">
+							  <thead>
+								<tr>
+								  <th scope="col">#</th>
+								  <th scope="col">Domain Name</th>
+								  <th scope="col">Action</th>
+								  
+								</tr>
+							  </thead>
+							  <tbody>
+								<tr>
+								  <th scope="row">1</th>
+								  <td>Loans</td>
+								  
+								  <td>
+									  <div class="form-group">
+										  <button type="submit" class="btn btn-primary">Edit</button>
+									  </div>
+								  </td>
+								  <td>
+									  <div class="form-group">
+										  <button type="submit" class="btn btn-danger">Remove</button>
+									  </div>
+								  </td>
+								  </tr>
+								<tr>
+								  <th scope="row">2</th>
+								  <td>Banking</td>
+								
+								  <td>
+									  <div class="form-group">
+										  <button type="submit" class="btn btn-primary">Edit</button>
+									  </div>
+								  </td>
+								  <td>
+									  <div class="form-group">
+										  <button type="submit" class="btn btn-danger">Remove</button>
+									  </div>
+								  </td>
+								</tr>
+								<tr>
+								  <th scope="row">3</th>
+								  <td>bb</td>
+								 
+								  <td>
+									  <div class="form-group">
+										  <button type="submit" class="btn btn-primary">Edit</button>
+									  </div>
+								  </td>
+								  <td>
+									  <div class="form-group">
+										  <button type="submit" class="btn btn-danger">Remove</button>
+									  </div>
+								  </td>
+								</tr>
+							  </tbody>
+							</table>
+						</div>
+					  </div>
+					</div>
+
+
+
+		  </div>
+		  	<div class="tab-pane fade" id="logs" role="tabpanel" aria-labelledby="logs-tab">
+
+				<div class="sub-tabs">
+						<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+						  <li class="nav-item">
+							<a class="nav-link active" id="pills-tickets-tab" data-toggle="pill" href="#pills-tickets" role="tab" aria-controls="pills-tickets" aria-selected="true">Tickets</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" id="pills-chat-tab" data-toggle="pill" href="#pills-chat" role="tab" aria-controls="pills-chat" aria-selected="false">Chats</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" id="pills-doc-tab" data-toggle="pill" href="#pills-doc" role="tab" aria-controls="pills-doc" aria-selected="false">Documents</a>
+						  </li>
+						</ul>
+						<div class="tab-content" id="pills-tabContent">
+						  <div class="tab-pane fade show active" id="pills-tickets" role="tabpanel" aria-labelledby="pills-tickets-tab">
+								<form class="mx-2 my-auto d-inline w-100">
+										<div class="input-group">
+										   <input type="text" class="form-control" placeholder="Search Here...">
+											<span class="input-group-append">
+											<button class="btn btn-secondary" type="button">Search</button>
+											</span>
+										 </div>
+									 </form>
+									 <table class="table" class="table" style="font-size: 14px;">
+									   <thead>
+										 <tr>
+										   <th scope="col">Ticket Id</th>
+										   <th scope="col">User Name</th>
+										   <th scope="col">Document</th>
+										   <th scope="col">Chat Link</th>
+										   <th scope="col">Doc Owner</th>
+										   <th scope="col">Status</th>
+										   
+										 </tr>
+									   </thead>
+									   <tbody>
+										 <tr>
+										   <th scope="row">0100</th>
+										   <td>Keerthi</td>
+										   <td><a href="#">Document.pdf</a></td>
+										   <td><a href="#">keerthiticketlogs.com</a></td>
+										   <td>Karthik</td>
+										   <td>
+											   <div class="form-group">
+												   <button type="submit" class="btn btn-primary">Active</button>
+											   </div>
+										   </td>
+										   </tr>
+										 <tr>
+											   <th scope="row">0101</th>
+											   <td>Karan</td>
+											   <td><a href="#">Document.pdf</a></td>
+											   <td><a href="#">karanticketlogs.com</a></td>
+											   <td>Karthi</td>
+										   </td>
+										   <td>
+											   <div class="form-group">
+												   <button type="submit" class="btn btn-primary">Active</button>
+											   </div>
+										   </td>
+										 </tr>
+										 <tr>
+											   <th scope="row">0102</th>
+											   <td>Sruthi</td>
+											   <td><a href="#">Document.pdf</a></td>
+											   <td><a href="#">sruthiticketlogs.com</a></td>
+											   <td>Navya</td>
+										   <td>
+											   <div class="form-group">
+												   <button type="submit" class="btn btn-success">Resolved</button>
+											   </div>
+										   </td>
+										 </tr>
+									   </tbody>
+									 </table>
+								 </div>
+						  <div class="tab-pane fade" id="pills-doc" role="tabpanel" aria-labelledby="pills-doc-tab">
+							  <form class="mx-2 my-auto d-inline w-100">
+								 <div class="input-group">
+									<input type="text" class="form-control" placeholder="Search Here...">
+									 <span class="input-group-append">
+									 <button class="btn btn-secondary" type="button">Search</button>
+									 </span>
+								  </div>
+							  </form>
+							  <table class="table" class="table" style="font-size: 14px;">
+								<thead>
+								  <tr>
+									<th scope="col">Doc Id</th>
+									<th scope="col">Document</th>
+									<th scope="col">Owner</th>
+									<th scope="col">Status</th>
+									
+									<th scope="col">Action</th>
+									<th scope="col">Timestamp</th>
+									
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<th scope="row">0100</th>
+									<td><a href="#">Document.pdf</a></td>
+									<td>Keerthi</td>
+									<td>
+										<div class="form-group">
+											<button type="submit" class="btn btn-primary">Active</button>
+										</div>
+									</td>
+									<td>
+										<div class="form-group">
+											<button type="submit" class="btn btn-danger">Remove</button>
+										</div>
+									</td>
+									<td>2:11 pm Sunday, 7 July 2019</td>
+									</tr>
+								  <tr>
+									<th scope="row">0101</th>
+									<td><a href="#">Document.pdf</a></td>
+									<td>Keerthi</td>
+									<td>
+										<div class="form-group">
+											<button type="submit" class="btn btn-primary">Active</button>
+										</div>
+									</td>
+									<td>
+										<div class="form-group">
+											<button type="submit" class="btn btn-danger">Remove</button>
+										</div>
+									</td>
+									<td>2:11 pm Sunday, 7 July 2019</td>
+								  </tr>
+								  <tr>
+									<th scope="row">0102</th>
+									<td><a href="#">Document.pdf</a></td>
+									<td>Sruthi</td>
+									<td>
+										<div class="form-group">
+											<button type="submit" class="btn btn-warning">Inprogress</button>
+										</div>
+									</td>
+									<td>
+										<div class="form-group">
+											<button type="submit" class="btn btn-danger">Remove</button>
+										</div>
+									</td>
+									<td>2:11 pm Sunday, 6 July 2019</td>
+								  </tr>
+								</tbody>
+							  </table>
+						  </div>
+						  <div class="tab-pane fade" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
+								<form class="mx-2 my-auto d-inline w-100">
+								   <div class="input-group">
+									  <input type="text" class="form-control" placeholder="Search Here...">
+									   <span class="input-group-append">
+									   <button class="btn btn-secondary" type="button">Search</button>
+									   </span>
+									</div>
+								</form>
+								<table class="table" class="table" style="font-size: 14px;">
+								  <thead>
+									<tr>
+									  <th scope="col">Chat Id</th>
+									  <th scope="col">User Name</th>
+									  <th scope="col">Document</th>
+									  <th scope="col">Chat Link</th>
+									  <th scope="col">Doc Owner</th>
+									  <th scope="col">Action</th>
+									  
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <th scope="row">0100</th>
+									  <td>Keerthi</td>
+									  <td><a href="#">Document.pdf</a></td>
+									  <td><a href="#">keerthichatlogs.com</a></td>
+									  <td>Karthik</td>
+									  <td>
+										  <div class="form-group">
+											  <button type="submit" class="btn btn-danger">Remove</button>
+										  </div>
+									  </td>
+									  </tr>
+									<tr>
+										  <th scope="row">0101</th>
+										  <td>Karan</td>
+										  <td><a href="#">Document.pdf</a></td>
+										  <td><a href="#">karanchatlogs.com</a></td>
+										  <td>Karthi</td>
+									  </td>
+									  <td>
+										  <div class="form-group">
+											  <button type="submit" class="btn btn-danger">Remove</button>
+										  </div>
+									  </td>
+									</tr>
+									<tr>
+										  <th scope="row">0102</th>
+										  <td>Sruthi</td>
+										  <td><a href="#">Document.pdf</a></td>
+										  <td><a href="#">sruthichatlogs.com</a></td>
+										  <td>Navya</td>
+									  <td>
+										  <div class="form-group">
+											  <button type="submit" class="btn btn-danger">Remove</button>
+										  </div>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+							</div>
+			</div>
+		</div>
+		</div>
+		  <div class="tab-pane fade" id="roles" role="tabpanel" aria-labelledby="roles-tab">
+
+				<div class="sub-tabs">
+						<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+						  <li class="nav-item">
+							<a class="nav-link active" id="pills-addRole-tab" data-toggle="pill" href="#pills-addRole" role="tab" aria-controls="pills-addRole" aria-selected="true">Add Roles</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" id="pills-viewRole-tab" data-toggle="pill" href="#pills-viewRole" role="tab" aria-controls="pills-viewRole" aria-selected="false">View Roles</a>
+						  </li>
+						</ul>
+						<div class="tab-content" id="pills-tabContent">
+						  <div class="tab-pane fade show active" id="pills-addRole" role="tabpanel" aria-labelledby="pills-addRole-tab">
+							<form style="max-width: 700px;margin:5% 5% 0 0;">
+							  <div class="form-group">
+								  <input type="text" class="form-control" placeholder="Role*">
+							  </div>
+							 
+							  <div class="form-group">
+								  <button type="submit" class="btn btn-primary">Add</button>
+							  </div>
+							</form>
+						  </div>
+						  
+						</div>
+					  </div>
+  
+		  </div>
+		<div style="margin-bottom: 20px;"><a href=""><i class="fas fa-arrow-left"></i> <span>Back</span></a></div>
+	</div>
+	<footer class="container mainfooter" role="contentinfo">
+	  <div class="footer-middle">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-sm-6">
+	        <!--Column1-->
+	        <div class="footer-pad">
+                    <h4>Contact Us</h4>
+                    <p>
+                      IIIT-Hyderabad, Gachibowli, Hyderabad - 500032. <br>
+                      <strong>Phone:</strong> +91 9999999999<br>
+                      <strong>Email:</strong> info@example.com<br>
+                    </p>
+
+	        </div>
+	      </div>
+
+    	  <div class="col-sm-6 justify-content-center">
+    		<h4>Follow Us</h4>
+            <ul class="social-network social-circle">
+             <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+             <li><a href="#" class="facebook"><i class="fab fa-facebook"></i></a></li>
+             <li><a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a></li>
+            </ul>				
+		  </div>
+	    </div>
+		<div class="row">
+			<div class="col-md-12 copy">
+				<p class="text-center">&copy; Copyright 2019 - <strong>IIIT-Hyderabad</strong>.  All rights reserved.</p>
+			</div>
+		</div>
+
+
+	  </div>
+	  </div>
+	</footer>
+
+</body>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/mobile-nav/mobile-nav.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script>
+  $(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+</script>
+</html>

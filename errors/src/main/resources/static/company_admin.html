@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Application</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+	<div class="container" style="border:1px solid #2c4857;border-top: none;">
+		<nav class="navbar navbar-light" style="margin:0 -15px; margin-bottom: 15px;background-color: #dedede;">
+		  <a class="navbar-brand" href="#">
+		    <img src="img/dbs.png" width="45" class="d-inline-block align-top" alt="" /><span style="display:inline-block;margin-top: 13px;"></span>
+		  </a>
+		  <div style="display: inline-block;"><span><b>Admin Panel: Welcome Admin!!</b></span></div>
+		  <div style="display: inline-block;"><a href="index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></div>
+		  
+		</nav>
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active" id="accounts-tab" data-toggle="tab" href="#accounts" role="tab" aria-controls="accounts" aria-selected="true">Accounts</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="logs-tab" data-toggle="tab" href="#logs" role="tab" aria-controls="logs" aria-selected="false">Logs</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+		  </li>
+
+		</ul>
+		<div class="tab-content" id="myTabContent">
+		  <div class="tab-pane fade show active" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
+		  <div class="container sub-tabs">
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+			  <li class="nav-item">
+			    <a class="nav-link active" id="pills-viewAccount-tab" data-toggle="pill" href="#pills-viewAccount" role="tab" aria-controls="pills-viewAccount" aria-selected="true">View Accounts</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" id="pills-createAccount-tab" data-toggle="pill" href="#pills-createAccount" role="tab" aria-controls="pills-createAccount" aria-selected="false">Create Accounts</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" id="pills-modifyAccount-tab" data-toggle="pill" href="#pills-modifyAccount" role="tab" aria-controls="pills-modifyAccount" aria-selected="false">Modify Accounts</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" id="pills-deleteAccount-tab" data-toggle="pill" href="#pills-deleteAccount" role="tab" aria-controls="pills-deleteAccount" aria-selected="false">Delete Accounts</a>
+			  </li>
+
+			</ul>
+			<div class="tab-content" id="pills-tabContent">
+			  <div class="tab-pane fade" id="pills-createAccount" role="tabpanel" aria-labelledby="pills-createAccount-tab">
+				<form style="max-width: 700px;margin:5% 5% 0 0;">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Name*">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Designation*">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Account Type*">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter age*">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Address*">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Aadhar Number*">
+					  </div>
+				  <div class="form-group">
+					  <div class="custom-file">
+					    <input type="file" name="file" class="custom-file-input" id="customFile">
+						<label class="custom-file-label" for="customFile">Choose Aadhar Card...</label>
+						<small>upload pdf only*</small>
+					  </div>
+				  </div>
+				 
+				  <div class="form-group">
+					  <button type="submit" class="btn btn-primary">Create</button>
+				  </div>
+				</form>
+
+
+			  </div>
+
+			  <div class="tab-pane fade" id="pills-modifyAccount" role="tabpanel" aria-labelledby="pills-modifyAccount-tab">
+				<form style="max-width: 700px;margin:5% 5% 0 0;">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Name*">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Account Number*">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Aadhar Number">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Account Type">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Address">
+					  </div>
+					  
+				 
+				  <div class="form-group">
+					  <button type="submit" class="btn btn-primary">Modify</button>
+				  </div>
+				</form>
+
+
+			  </div>
+
+			  <div class="tab-pane fade" id="pills-deleteAccount" role="tabpanel" aria-labelledby="pills-deleteAccount-tab">
+				<form style="max-width: 700px;margin:5% 5% 0 0;">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Name*">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Account Number">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Enter Aadhar Number">
+					  </div>
+				 
+				  <div class="form-group">
+					  <button type="submit" class="btn btn-danger">Delete Account</button>
+				  </div>
+				</form>
+
+
+			  </div>
+			  <div class="tab-pane fade show active" id="pills-viewAccount" role="tabpanel" aria-labelledby="pills-viewAccount-tab">
+				<form class="mx-2 my-auto d-inline w-100">
+				   <div class="input-group">
+				      <input type="text" class="form-control" placeholder="Search Account...">
+				       <span class="input-group-append">
+				       <button class="btn btn-secondary" type="button">Search</button>
+				       </span>
+				    </div>
+				</form>
+				<table class="table" style="font-size: 14px;">
+				  <thead>
+				    <tr>
+				      <th scope="col">#</th>
+					  <th scope="col">Account Number</th>
+					  <th scope="col">Account Holder Name</th>
+					  <th scope="col">Aadhar Number</th>
+					  <th scope="col">Created On</th>
+					  <th scope="col">Created By</th>
+					  <th scope="col">Action</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+					  <td><a href="#">535425677866</a></td>
+					  <td>Manasa</td>
+				      <td>1223 3433 2213</td>
+					  <td>1:15 pm Monday, 15 July 2019</td>
+					  <td>Manasa</td>
+					  <td>
+						<div class="form-group">
+							<button type="submit" class="btn btn-danger">Remove</button>
+						</div>
+					</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">2</th>
+					  <td><a href="#">23424343242</a></td>
+					  <td>Shirisha</td>
+				      <td>1212 5545 3442</td>
+					  <td>10:35 am Monday, 15 July 2019</td>
+					  <td>Manasa</td>
+					  <td>
+						<div class="form-group">
+							<button type="submit" class="btn btn-danger">Remove</button>
+						</div>
+						</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">3</th>
+					  <td><a href="#">3443423435567</a></td>
+					  <td>Mahesh</td>
+				      <td>4566 5654 7655</td>
+					  <td>2:11 pm Sunday, 14 July 2019</td>
+					  <td>Manasa</td>
+					  <td>
+						<div class="form-group">
+							<button type="submit" class="btn btn-danger">Remove</button>
+						</div>
+						</td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+			</div>		  	
+		  </div>
+		  </div>
+
+
+
+		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<div class="pd-20">
+					<div class="header">
+						<img src="./img/profile.png" height="25" width="25">
+						<div class="desc"><b>ABOUT</b></div>
+						<div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a> </div>
+					</div>
+					<!--<h3 class="mgbt-xs-15 mgtp-10 font-semibold"><img src="C:\Users\Abridge Solutions\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\All\dbs_training\img\profile.png">ABOUT</h3>-->
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">First Name:</label>
+								<div class="col-xs-7 controls">Mariah</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Last Name:</label>
+								<div class="col-xs-7 controls">Caraiban</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">User Name:</label>
+								<div class="col-xs-7 controls">Mariah</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Email:</label>
+								<div class="col-xs-7 controls">mariah@gmail.com</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">City:</label>
+								<div class="col-xs-7 controls">Los Angeles</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Country:</label>
+								<div class="col-xs-7 controls">United States</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Birthday:</label>
+								<div class="col-xs-7 controls">Jan 22, 1984</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Account Number:</label>
+								<div class="col-xs-7 controls">628472636423</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+			  
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Phone:</label>
+								<div class="col-xs-7 controls">234-5678</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		  
+		  
+		  <div class="tab-pane fade" id="logs" role="tabpanel" aria-labelledby="logs-tab">
+
+				<div class="sub-tabs">
+						<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+						  <li class="nav-item">
+							<a class="nav-link active" id="pills-created-tab" data-toggle="pill" href="#pills-created" role="tab" aria-controls="pills-created" aria-selected="true">Created Accounts</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" id="pills-modified-tab" data-toggle="pill" href="#pills-modified" role="tab" aria-controls="pills-modified" aria-selected="false">Modified Accounts</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" id="pills-deleted-tab" data-toggle="pill" href="#pills-deleted" role="tab" aria-controls="pills-deleted" aria-selected="false">Deleted Accounts</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" id="pills-transaction-tab" data-toggle="pill" href="#pills-transaction" role="tab" aria-controls="pills-transaction" aria-selected="false">Transactions</a>
+						  </li>
+						</ul>
+						<div class="tab-content" id="pills-tabContent">
+						  <div class="tab-pane fade show active" id="pills-created" role="tabpanel" aria-labelledby="pills-created-tab">
+								<form class="mx-2 my-auto d-inline w-100">
+										<div class="input-group">
+										   <input type="text" class="form-control" placeholder="Search Here...">
+											<span class="input-group-append">
+											<button class="btn btn-secondary" type="button">Search</button>
+											</span>
+										 </div>
+									 </form>
+									 <table class="table" class="table" style="font-size: 14px;">
+									   <thead>
+										 <tr>
+										   <th scope="col">Account Number</th>
+										   <th scope="col">Name</th>
+										   <th scope="col">Aadhar Number</th>
+										   <th scope="col">Status</th>
+										   
+										 </tr>
+									   </thead>
+									   <tbody>
+										 <tr>
+										   <th scope="row">01344353400</th>
+										   <td>Keerthi</td>
+										   <td><a href="#">1221 4543 3432</a></td>
+										   <td>
+											   <div class="form-group">
+												   <button type="submit" class="btn btn-primary">Active</button>
+											   </div>
+										   </td>
+										   </tr>
+										 <tr>
+											   <th scope="row">013434545301</th>
+											   <td>Karan</td>
+											   <td><a href="#">2232 3342 2343</a></td>
+											   
+										   </td>
+										   <td>
+											   <div class="form-group">
+												   <button type="submit" class="btn btn-primary">Active</button>
+											   </div>
+										   </td>
+										 </tr>
+										 <tr>
+											   <th scope="row">01076549872</th>
+											   <td>Sruthi</td>
+											   <td><a href="#">5654 5675 8767</a></td>
+										   <td>
+											   <div class="form-group">
+												   <button type="submit" class="btn btn-warning">Deleted</button>
+											   </div>
+										   </td>
+										 </tr>
+									   </tbody>
+									 </table>
+								 </div>
+
+								 <div class="tab-pane fade" id="pills-transaction" role="tabpanel" aria-labelledby="pills-transaction-tab">
+									<form class="mx-2 my-auto d-inline w-100">
+									   <div class="input-group">
+										  <input type="text" class="form-control" placeholder="Search Here...">
+										   <span class="input-group-append">
+										   <button class="btn btn-secondary" type="button">Search</button>
+										   </span>
+										</div>
+									</form>
+									<table class="table" class="table" style="font-size: 14px;">
+									  <thead>
+										<tr>
+										  <th scope="col">From</th>
+										  <th scope="col">To</th>
+										  <th scope="col">Amount</th>
+										  <th scope="col">Timestamp</th>
+										  
+										</tr>
+									  </thead>
+									  <tbody>
+										<tr>
+										  <th scope="row">01076556780</th>
+										  <td>2343554532</td>
+										  <td>1000</td>
+										  <td>2:18 pm Monday, 15 July 2019</td>
+										  </tr>
+										<tr>
+										  <th scope="row">0198765401</th>
+										  <td>34564324567</td>
+										  <td>2000</td>
+										  
+										  <td>5:10 pm Sunday, 14 July 2019</td>
+										</tr>
+										<tr>
+										  <th scope="row">0108765432</th>
+										  <td>324564335654</td>
+										  <td>300000</td>
+										  
+										  <td>2:11 pm Sunday, 7 July 2019</td>
+										</tr>
+									  </tbody>
+									</table>
+								</div>
+						  <div class="tab-pane fade" id="pills-deleted" role="tabpanel" aria-labelledby="pills-deleted-tab">
+							  <form class="mx-2 my-auto d-inline w-100">
+								 <div class="input-group">
+									<input type="text" class="form-control" placeholder="Search Here...">
+									 <span class="input-group-append">
+									 <button class="btn btn-secondary" type="button">Search</button>
+									 </span>
+								  </div>
+							  </form>
+							  <table class="table" class="table" style="font-size: 14px;">
+								<thead>
+								  <tr>
+									<th scope="col">Account Number</th>
+									<th scope="col">Name</th>
+									<th scope="col">Deleted By</th>
+									<th scope="col">Timestamp</th>
+									
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<th scope="row">01076556780</th>
+									<td>Karan</td>
+									<td>Keerthi</td>
+									<td>2:18 pm Monday, 15 July 2019</td>
+									</tr>
+								  <tr>
+									<th scope="row">0198765401</th>
+									<td>navya</td>
+									<td>Keerthi</td>
+									
+									<td>5:10 pm Sunday, 14 July 2019</td>
+								  </tr>
+								  <tr>
+									<th scope="row">0108765432</th>
+									<td>manasa</td>
+									<td>Sruthi</td>
+									
+									<td>2:11 pm Sunday, 7 July 2019</td>
+								  </tr>
+								</tbody>
+							  </table>
+						  </div>
+						  <div class="tab-pane fade" id="pills-modified" role="tabpanel" aria-labelledby="pills-modified-tab">
+								<form class="mx-2 my-auto d-inline w-100">
+								   <div class="input-group">
+									  <input type="text" class="form-control" placeholder="Search Here...">
+									   <span class="input-group-append">
+									   <button class="btn btn-secondary" type="button">Search</button>
+									   </span>
+									</div>
+								</form>
+								<table class="table" class="table" style="font-size: 14px;">
+								  <thead>
+									<tr>
+									  <th scope="col">Account Number</th>
+									  <th scope="col">Name</th>
+									  <th scope="col">Modified By</th>
+									  
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <th scope="row">01345673400</th>
+									  <td>Keerthi</td>
+									  <td><a href="#">Navya</a></td>
+									  
+									  </tr>
+									<tr>
+										  <th scope="row">03456786543101</th>
+										  <td>Karan</td>
+										  <td><a href="#">Anjali</a></td>
+										
+									</tr>
+									<tr>
+										  <th scope="row">013456432102</th>
+										  <td>Sruthi</td>
+										  <td><a href="#">Navya</a></td>
+										  
+									</tr>
+								  </tbody>
+								</table>
+							</div>
+			</div>
+		</div>
+		</div>
+		<div style="margin-bottom: 20px;"><a href=""><i class="fas fa-arrow-left"></i> <span>Back</span></a></div>
+	</div>
+	<footer class="container mainfooter" role="contentinfo">
+	  <div class="footer-middle">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-sm-6">
+	        <!--Column1-->
+	        <div class="footer-pad">
+                    <h4>Contact Us</h4>
+                    <p>
+                      DBS ASIA HUB 2, Waverock, Hyderabad - 500032. <br>
+                      <strong>Phone:</strong> +91 9999999999<br>
+                      <strong>Email:</strong> info@example.com<br>
+                    </p>
+
+	        </div>
+	      </div>
+
+    	  <div class="col-sm-6 justify-content-center">
+    		<h4>Follow Us</h4>
+            <ul class="social-network social-circle">
+             <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+             <li><a href="#" class="facebook"><i class="fab fa-facebook"></i></a></li>
+             <li><a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a></li>
+            </ul>				
+		  </div>
+	    </div>
+		<div class="row">
+			<div class="col-md-12 copy">
+				<p class="text-center">&copy; Copyright 2019 - <strong>DBS ASIA HUB 2</strong>.  All rights reserved.</p>
+			</div>
+		</div>
+
+
+	  </div>
+	  </div>
+	</footer>
+
+</body>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/mobile-nav/mobile-nav.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script>
+  $(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+</script>
+</html>

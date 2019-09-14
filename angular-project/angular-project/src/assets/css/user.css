@@ -1,0 +1,47 @@
+.navbar{
+  padding: 0 1rem;
+  font-size: 12px;
+}
+.navbar ul li a{
+	color: black !important;
+}
+.faq .card{
+  font-size: 12px;
+}
+.faq .card button{
+  font-size: 13px;
+}
+.feed .card-title{
+  background-color: #31aeb7;
+}
+.dropdown-menu{
+  font-size: 12px;
+}
+
+.feed .card {
+	border: 1px dashed rgb(127, 127, 127);
+	border: 1px dashed rgba(0, 0, 0, .5);
+	-webkit-background-clip: padding-box; /* for Safari */
+	background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+  -webkit-animation: underBlink 1s infinite;
+  -moz-animation:    underBlink 1s infinite;
+  -o-animation:      underBlink 1s infinite;
+  animation:         underBlink 1s infinite;
+}
+
+@-webkit-keyframes underBlink {
+  0%   { border: 1px solid rgba(0, 0, 0, .2); }
+  100% { border: 1px solid rgba(0, 0, 0, .5); }
+}
+@-moz-keyframes underBlink {
+  0%   { border: 1px solid rgba(0, 0, 0, .2); }
+  100% { border: 1px solid rgba(0, 0, 0, .5); }
+}
+@-o-keyframes underBlink {
+  0%   { border: 1px solid rgba(0, 0, 0, .2); }
+  100% { border: 1px solid rgba(0, 0, 0, .5); }
+}
+@keyframes underBlink {
+  0%   { border: 1px solid rgba(0, 0, 0, .2); }
+  100% { border: 1px solid rgba(0, 0, 0, .5); }
+}

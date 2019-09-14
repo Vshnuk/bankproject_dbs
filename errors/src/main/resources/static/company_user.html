@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Application</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+	<div class="container" style="border:1px solid #2c4857;border-top: none;">
+		<nav class="navbar navbar-light" style="margin:0 -15px; margin-bottom: 15px;background-color: #dedede;">
+		  <a class="navbar-brand" href="#">
+		    <img src="img/dbs.png" width="45" class="d-inline-block align-top" alt="" /><span style="display:inline-block;margin-top: 13px;"></span>
+		  </a>
+		  <div style="display: inline-block;"><span><b> Welcome Customer!!</b></span></div>
+		  <div style="display: inline-block;"><a href="index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></div>
+		  
+		</nav>
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active" id="accounts-tab" data-toggle="tab" href="#accounts" role="tab" aria-controls="accounts" aria-selected="true">Accounts</a>
+		  </li>
+		
+		  <li class="nav-item">
+		    <a class="nav-link" id="logs-tab" data-toggle="tab" href="#logs" role="tab" aria-controls="logs" aria-selected="false">Logs</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+		  </li>  
+		</ul>
+		<div class="tab-content" id="myTabContent">
+		  <div class="tab-pane fade show active" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
+		  	<div class="sub-tabs">
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="pills-transfer-tab" data-toggle="pill" href="#pills-transfer" role="tab" aria-controls="pills-transfer" aria-selected="false">Transfer</a>
+				</li>
+			  <li class="nav-item">
+			    <a class="nav-link" id="pills-checkBalance-tab" data-toggle="pill" href="#pills-checkBalance" role="tab" aria-controls="pills-checkBalance" aria-selected="false">Check Balance</a>
+			  </li>
+			</ul>
+			<div class="tab-content" id="pills-tabContent">
+			  <div class="tab-pane fade show active" id="pills-transfer" role="tabpanel" aria-labelledby="pills-transfer-tab">
+				<form style="max-width: 700px;margin:5% 5% 0 0;">
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="From account number">
+				  </div>
+				  <div class="form-group">
+				    <input type="text" class="form-control"placeholder="To account number" >
+				  </div>
+				  <div class="form-group">
+				   <input type="text" class="form-control" placeholder="Enter Amount">
+				  </div>
+				  <div class="form-group">
+					<label class="badge">Payment mode :</label>
+					<sub><font color="grey">Select mode of payment</font></sub>
+				  <div class="radio">
+					<label><input type="radio" name="imps">IMPS</label>
+				  </div>
+				  <div class="radio">
+					<label><input type="radio" name="nift">NIFT</label>
+				  </div>
+				  <div class="radio">
+					<label><input type="radio" name="rtgs">RTGS</label>
+				  </div>
+				</div>
+				  <div class="form-group">
+					  <button type="submit" class="btn btn-primary">Send Money</button>
+				  </div>
+				</form>
+			  </div>
+			  <div class="tab-pane fade" id="pills-checkBalance" role="tabpanel" aria-labelledby="pills-checkBalance-tab">
+				<div class="form-group">
+					<b>Available amount in the account :</b><input type="text" class="form-control" >
+				</div>
+			  </div>
+			</div>
+			</div>
+		  </div>
+
+
+
+
+		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<div class="pd-20">
+					<div class="header">
+						<img src="./img/profile.png" height="25" width="25">
+						<div class="desc"><b>ABOUT</b></div>
+						<div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a> </div>
+					</div>
+					<!--<h3 class="mgbt-xs-15 mgtp-10 font-semibold"><img src="C:\Users\Abridge Solutions\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\All\dbs_training\img\profile.png">ABOUT</h3>-->
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">First Name:</label>
+								<div class="col-xs-7 controls">Mariah</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Last Name:</label>
+								<div class="col-xs-7 controls">Caraiban</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">User Name:</label>
+								<div class="col-xs-7 controls">Mariah</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Email:</label>
+								<div class="col-xs-7 controls">mariah@gmail.com</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">City:</label>
+								<div class="col-xs-7 controls">Los Angeles</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Country:</label>
+								<div class="col-xs-7 controls">United States</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Birthday:</label>
+								<div class="col-xs-7 controls">Jan 22, 1984</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Account Number:</label>
+								<div class="col-xs-7 controls">628472636423</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+			  
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Phone:</label>
+								<div class="col-xs-7 controls">234-5678</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		  
+		  <div class="tab-pane fade" id="logs" role="tabpanel" aria-labelledby="logs-tab">
+
+			<div class="sub-tabs">
+					<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+					  <li class="nav-item">
+						<a class="nav-link active" id="pills-transaction-tab" data-toggle="pill" href="#pills-transaction" role="tab" aria-controls="pills-transaction" aria-selected="true">Transactions</a>
+					  </li>
+					</ul>
+						<div class="tab-content" id="pills-tabContent">
+						  <div class="tab-pane fade show active" id="pills-transaction" role="tabpanel" aria-labelledby="pills-transaction-tab">
+								<form class="mx-2 my-auto d-inline w-100">
+									<div>
+										 <label for="start">From date:</label>
+
+									<input type="date" id="start" name="trip-start"
+       									value="2019-06-09"
+									   min="2000-01-01" max="2019-12-31">
+
+									   <label for="start">To date:</label>
+
+									<input type="date" id="end" name="trip-end"
+       									value="2019-06-09"
+      								 min="2000-01-01" max="2019-12-31">
+									</div>
+									 </form>
+									 <table class="table" class="table" style="font-size: 14px;">
+									   <thead>
+										 <tr>
+										   <th scope="col">Transaction Id</th>
+										   <th scope="col">To</th>
+										   <th scope="col">Amount</th>
+										   <th scope="col">Timestamp</th>
+										   <th scope="col">Status</th>
+										   
+										 </tr>
+									   </thead>
+									   <tbody>
+										 <tr>
+										   <th scope="row">0100</th>
+										   <td>Keerthi</td>
+										   <td>200</td>
+										   <td>11:43 am Monday, 15 July 2019</td>
+										   <td>
+											   <div class="form-group">
+												   <button type="submit" class="btn btn-primary">Processing</button>
+											   </div>
+										   </td>
+										   </tr>
+										 <tr>
+											   <th scope="row">0101</th>
+											   <td>Karan</td>
+											   <td>10000</td>
+											   <td>2:15 pm Saturday, 13 July 2019</td>
+										   </td>
+										   <td>
+											   <div class="form-group">
+												   <button type="submit" class="btn btn-success">sent</button>
+											   </div>
+										   </td>
+										 </tr>
+										 <tr>
+											   <th scope="row">0102</th>
+											   <td>Sruthi</td>
+											   <td>40000</td>
+											   <td>1:15 pm Monday, 15 July 2019</td>
+										   <td>
+											   <div class="form-group">
+												   <button type="submit" class="btn btn-success">sent</button>
+											   </div>
+										   </td>
+										 </tr>
+									   </tbody>
+									 </table>
+								 </div>
+			</div>
+		</div>
+		</div>
+		  
+		<div style="margin-bottom: 20px;"><a href=""><i class="fas fa-arrow-left"></i> <span>Back</span></a></div>
+	</div>
+	<footer class="container mainfooter" role="contentinfo">
+	  <div class="footer-middle">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-sm-6">
+	        <!--Column1-->
+	        <div class="footer-pad">
+                    <h4>Contact Us</h4>
+                    <p>
+                      DBS ASIA HUB 2, Waverock, Hyderabad - 500032. <br>
+                      <strong>Phone:</strong> +91 9999999999<br>
+                      <strong>Email:</strong> info@example.com<br>
+                    </p>
+
+	        </div>
+	      </div>
+
+    	  <div class="col-sm-6 justify-content-center">
+    		<h4>Follow Us</h4>
+            <ul class="social-network social-circle">
+             <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+             <li><a href="#" class="facebook"><i class="fab fa-facebook"></i></a></li>
+             <li><a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a></li>
+            </ul>				
+		  </div>
+	    </div>
+		<div class="row">
+			<div class="col-md-12 copy">
+				<p class="text-center">&copy; Copyrights 2019 - <strong>DBS ASIA HUB 2</strong>.  All rights reserved.</p>
+			</div>
+		</div>
+
+
+	  </div>
+	  </div>
+	</footer>
+
+</body>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/mobile-nav/mobile-nav.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script>
+  $(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+</script>
+</html>

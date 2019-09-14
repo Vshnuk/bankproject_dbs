@@ -1,0 +1,201 @@
+<br><br><br><br><br>
+
+<div class="container" style="border:1px solid #2c4857;border-top: none;">
+		<nav class="navbar navbar-light" style="margin:0 -15px; margin-bottom: 15px;background-color: #dedede;">
+		  <a class="navbar-brand" href="#">
+		    <span style="display:inline-block;margin-top: 13px;"></span>
+		  </a>
+		  <div style="display: inline-block;"><span><b> Welcome {{myBankProfile.accountname}} !!</b></span></div>
+		  <div style="display: inline-block;"></div>
+		  
+		</nav>
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active" id="accounts-tab" data-toggle="tab" href="#accounts" role="tab" aria-controls="accounts" aria-selected="true">Accounts</a>
+		  </li>
+		
+		  <li class="nav-item">
+		    <a class="nav-link" id="logs-tab" data-toggle="tab" href="#logs" role="tab" aria-controls="logs" aria-selected="false">Logs</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+		  </li>  
+		</ul>
+		<div class="tab-content" id="myTabContent">
+		  <div class="tab-pane fade show active" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
+		  	<div class="sub-tabs">
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="pills-transfer-tab" data-toggle="pill" href="#pills-transfer" role="tab" aria-controls="pills-transfer" aria-selected="false">Transfer</a>
+				</li>
+			  <li class="nav-item">
+			    <a class="nav-link" id="pills-checkBalance-tab" data-toggle="pill" href="#pills-checkBalance" role="tab" aria-controls="pills-checkBalance" aria-selected="false">Check Balance</a>
+			  </li>
+			</ul>
+			<div class="tab-content" id="pills-tabContent">
+			  <div class="tab-pane fade show active" id="pills-transfer" role="tabpanel" aria-labelledby="pills-transfer-tab">
+				<form style="max-width: 700px;margin:5% 5% 0 0;">
+				  <div class="form-group">
+					<label for="sel1">Select account Number:</label>
+						<select class="form-control" id="sel1" (change)="myFunc($event.target.value)">
+							<option *ngFor="let bankaccount of allbankaccounts" >{{bankaccount.accno}} </option> 
+						</select>
+				    <!-- <input type="text" class="form-control" placeholder="From account number"> -->
+				  </div>
+				  <div class="form-group">
+				    <input type="text" class="form-control"placeholder="To account number" [(ngModel)]="tran.toAccountId" name="trantoAccountId">
+				  </div>
+				  <div class="form-group">
+				   <input type="text" class="form-control" placeholder="Enter Amount" [(ngModel)]="tran.amount" name="tranamount">
+				  </div>
+				  <div class="form-group">
+					<label class="badge">Payment mode :</label>
+					<sub><font color="grey">Select mode of payment</font></sub>
+				  <div class="radio">
+					<label><input type="radio" name="imps">IMPS</label>
+				  </div>
+				  <div class="radio">
+					<label><input type="radio" name="nift">NEFT</label>
+				  </div>
+				  <div class="radio">
+					<label><input type="radio" name="rtgs">RTGS</label>
+				  </div>
+				</div>
+				  <div class="form-group">
+					  <button type="submit" class="btn btn-primary" (click)="sendMoney()">Send Money</button>
+				  </div>
+				</form>
+			  </div>
+			  <div class="tab-pane fade" id="pills-checkBalance" role="tabpanel" aria-labelledby="pills-checkBalance-tab">
+				<div class="form-group">
+					<b>Available amount in the account :</b><input type="text" class="form-control" [(ngModel)]="amountInSelectedAccount" name="tranamount">
+				</div>
+			  </div>
+			</div>
+			</div>
+		  </div>
+
+
+
+
+		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<div class="pd-20">
+					<div class="header">
+						<img src="assets/images/profile.png" height="25" width="25">
+						<div class="desc"><b>ABOUT</b></div>
+						<div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> </a> </div>
+					</div>
+					<!--<h3 class="mgbt-xs-15 mgtp-10 font-semibold"><img src="C:\Users\Abridge Solutions\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\All\dbs_training\img\profile.png">ABOUT</h3>-->
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Account Name:</label>
+								<div class="col-xs-7 controls">{{myBankProfile.accountname}}</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Email:</label>
+								<div class="col-xs-7 controls">{{myBankProfile.Email}}</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Aadhaarno:</label>
+								<div class="col-xs-7 controls">{{myBankProfile.adhaarno}}</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Country:</label>
+								<div class="col-xs-7 controls">United States</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Birthday:</label>
+								<div class="col-xs-7 controls">Jan 22, 1984</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Account Number:</label>
+								<div class="col-xs-7 controls">628472636423</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+			  
+						<div class="col-sm-6">
+							<div class="row mgbt-xs-0">
+								<label class="col-xs-5 control-label">Address:</label>
+								<div class="col-xs-7 controls">{{myBankProfile.address}}</div>
+								<!-- col-sm-10 --> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		  
+		  <div class="tab-pane fade" id="logs" role="tabpanel" aria-labelledby="logs-tab">
+
+			<div class="sub-tabs">
+					<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+					  <li class="nav-item">
+						<a class="nav-link active" id="pills-transaction-tab" data-toggle="pill" href="#pills-transaction" role="tab" aria-controls="pills-transaction" aria-selected="true">Transactions</a>
+					  </li>
+					</ul>
+						<div class="tab-content" id="pills-tabContent">
+						  <div class="tab-pane fade show active" id="pills-transaction" role="tabpanel" aria-labelledby="pills-transaction-tab">
+								<form class="mx-2 my-auto d-inline w-100">
+									<div>
+										<label for="start">From date:</label>
+											<input type="date" id="start" name="trip-start"
+												   value="2019-06-09" min="2000-01-01" max="2019-12-31"
+												   [(ngModel)]="fromtodate.fromdate" name="fromtodatefromdate">&nbsp;
+									   	<label for="start">To date:</label>
+											<input type="date" id="end" name="trip-end"
+												   value="2019-06-09" min="2000-01-01" max="2019-12-31"
+												   [(ngModel)]="fromtodate.todate" name="fromtodatetodate">&nbsp;&nbsp;
+										<button (click)="Datefilter()"><i class="fa fa-search" aria-hidden="true"></i></button>
+									</div>
+								</form>
+									 <table class="table" class="table" style="font-size: 14px;">
+									   <thead>
+										 <tr >
+										   <th scope="col">Transaction Id</th>
+										   <th scope="col">Type</th>
+										   <th scope="col">Account</th>
+										   <th scope="col">Amount</th>
+										   <th scope="col">Timestamp</th>
+										   <th scope="col">Status</th>
+										   
+										 </tr>
+									   </thead>
+									   <tbody> 
+										 <tr *ngFor="let trans of allTransactions;let i = index">
+										   <th scope="row">{{trans.transaction_id}}</th>
+										   <th scope="row">{{trans.type}} Your account {{tran.fromAccountId}}</th>
+										   <td>{{trans.toAccountId}}</td>
+										   <td>{{trans.amount}}</td>
+										   <td>{{trans.timestamp}}</td>
+										   <td>
+											   <div class="form-group">
+												   <button type="submit" class="btn btn-success">Success</button>
+											   </div>
+										   </td>
+										   </tr>
+									   </tbody>
+									 </table>
+								 </div>
+			</div>
+		</div>
+		</div>
+		  
+		<div style="margin-bottom: 20px;"><a href=""><i class="fas fa-arrow-left"></i> <span>Back</span></a></div>
+	</div>
